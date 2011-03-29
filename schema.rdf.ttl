@@ -398,6 +398,13 @@ place:Province a owl:Class
 ; rdfs:isDefinedBy place:
 .
 
+place:Boundary a owl:Class
+; rdfs:subClassOf rdf:Seq
+; rdfs:label "Boundary"
+; rdfs:comment "A Boundary resource specifies a sequence of points which, if joined, give the boundary of a geographical area. The sequence may be a serious of resources, each with a latitude and longitude, or a series of points using the datatype place:latlong. If the final point is the same as the first then the boundary is considered to be a closed area, whereas if the first and last points differ the boundary is considered to be a border line."
+; vs:term_status "testing"
+; rdfs:isDefinedBy place:
+.
 
 #####################################################################
 # Properties
@@ -406,17 +413,41 @@ place:Province a owl:Class
 place:in a owl:ObjectProperty
 ; rdfs:label "in"
 ; rdfs:comment """in is a property that allows you to say that a place is entirely within the boundaries of another place. It allows you to make statements like "Paris is in france"."""
+; vs:term_status "testing"
 ; rdfs:isDefinedBy place:
 .
 
 place:overlaps a owl:ObjectProperty
 ; rdfs:label "overlaps"
 ; rdfs:comment "Overlaps is a property for saying that a particular place shares an area of land with another place but that neither place is entirely within the other."
+; vs:term_status "testing"
 ; rdfs:isDefinedBy place:
 .
 
+place:bounded_by a owl:ObjectProperty
+; rdfs:label "bounded by"
+; rdfs:range place:Boundary
+; rdfs:comment "The bounded by property relates any place to a boundary that marks out the geographic area it covers."
+; vs:term_status "testing"
+; rdfs:isDefinedBy place:
+.
+
+place:point_on_map a owl:DatatypeProperty
+; rdfs:label "Point on map"
+; rdfs:comment "The point on map property indicates where a place should be shown by a pin on a map."
+.
+
 #####################################################################
-# Labels
+# Datatypes
+#####################################################################
+
+place:latlong a rdfs:Datatype
+; rdfs:label "Lat/Long"
+; rdfs:comment """The Lat/long datatype allows us to specify that a literal value is a latitude/longitude pair, based in the WGS84 projection and in the comma-seperated, decimal format. e.g. "38.897605896,-77.0365219116"^^place:latlong would specify the WGS84 geographic co-ordinates of The White House, Washington DC."""
+.
+
+#####################################################################
+# Language Labels
 #####################################################################
 
 place:Plate rdfs:label "Plate"@en-gb,"Plate"@fr-fr,"Tafel"@de,"Placa"@es,"板"@zh .
