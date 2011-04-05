@@ -580,6 +580,13 @@
     <rdfs:range rdf:resource="http://purl.org/ontology/places#Boundary"/>
     <vs:term_status>testing</vs:term_status>
   </owl:ObjectProperty>
+  <owl:ObjectProperty rdf:about="http://purl.org/ontology/places#contains">
+    <rdfs:comment>contains is the inverse of in "France contains Paris".</rdfs:comment>
+    <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/places#"/>
+    <rdfs:label>contains</rdfs:label>
+    <owl:inverseOf rdf:resource="http://purl.org/ontology/places#in"/>
+    <vs:term_status>testing</vs:term_status>
+  </owl:ObjectProperty>
   <owl:ObjectProperty rdf:about="http://purl.org/ontology/places#in">
     <rdfs:comment>in is a property that allows you to say that a place is entirely within the boundaries of another place. It allows you to make statements like "Paris is in france".</rdfs:comment>
     <rdfs:isDefinedBy rdf:resource="http://purl.org/ontology/places#"/>

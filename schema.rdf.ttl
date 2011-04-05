@@ -417,6 +417,14 @@ place:in a owl:ObjectProperty
 ; rdfs:isDefinedBy place:
 .
 
+place:contains a owl:ObjectProperty
+; rdfs:label "contains"
+; owl:inverseOf place:in
+; rdfs:comment """contains is the inverse of in "France contains Paris"."""
+; vs:term_status "testing"
+; rdfs:isDefinedBy place:
+.
+
 place:overlaps a owl:ObjectProperty
 ; rdfs:label "overlaps"
 ; rdfs:comment "Overlaps is a property for saying that a particular place shares an area of land with another place but that neither place is entirely within the other."
